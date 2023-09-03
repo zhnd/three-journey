@@ -1,16 +1,13 @@
 "use client";
+import useParentElementMeasure from "@/hooks/useParentElementMeasure";
 import { useCallback, useEffect, useRef } from "react";
 import * as THREE from "three";
 
 export default function Page() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasElementRef = useRef<HTMLCanvasElement | null>(null);
+  const { rect } = useParentElementMeasure(canvasElementRef);
 
   const draw = useCallback(() => {
-    const sizes = {
-      with: 800,
-      hight: 600,
-    };
-
     /**
      * scene
      * like a container
@@ -56,7 +53,7 @@ export default function Page() {
      * can have multiple ans switch between them
      * different types
      */
-    const camera = new THREE.PerspectiveCamera(75, sizes.with / sizes.hight);
+    const camera = new THREE.PerspectiveCamera(75, rect.width / rect.height);
     scene.add(camera);
 
     // nothing visible because the camera is inside the cube
@@ -74,15 +71,15 @@ export default function Page() {
      * you can create it or you can let Three.js do it
      */
     const renderer = new THREE.WebGLRenderer({
-      canvas: canvasRef.current ?? undefined,
+      canvas: canvasElementRef.current ?? undefined,
     });
-    renderer.setSize(sizes.with, sizes.hight);
+    renderer.setSize(rect.width, rect.height);
     renderer.render(scene, camera);
-  }, []);
+  }, [rect]);
 
   useEffect(() => {
     draw();
   }, [draw]);
 
-  return <canvas ref={canvasRef} />;
+  return <canvas ref={canvasElementRef} />;
 }
