@@ -3,8 +3,20 @@ import Link from "next/link";
 export default function Home() {
   const routes = [
     {
+      name: "debug ui",
+      path: "/debug-ui",
+    },
+    {
+      name: "geometries",
+      path: "/geometries",
+    },
+    {
       name: "fullscreen and resizing",
       path: "/fullscreen-resizing",
+    },
+    {
+      name: "transform object",
+      path: "/transform-object",
     },
     {
       name: "Camera",

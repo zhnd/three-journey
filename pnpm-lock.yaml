@@ -26,6 +26,9 @@ dependencies:
   gsap:
     specifier: ^3.12.2
     version: 3.12.2
+  lil-gui:
+    specifier: ^0.18.2
+    version: 0.18.2
   next:
     specifier: 13.4.19
     version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -1727,6 +1730,10 @@ packages:
   /lil-gui@0.17.0:
     resolution: {integrity: sha512-MVBHmgY+uEbmJNApAaPbtvNh1RCAeMnKym82SBjtp5rODTYKWtM+MXHCifLe2H2Ti1HuBGBtK/5SyG4ShQ3pUQ==}
     dev: true
+
+  /lil-gui@0.18.2:
+    resolution: {integrity: sha512-DgdrLy3/KGC0PiQLKgOcJMPItP4xY4iWgJ9+91Zaxfr8GCTmMps05QS9w9jW7yspILlbscbquwjOwxmWnSx5Uw==}
+    dev: false
 
   /lilconfig@2.1.0:
     resolution: {integrity: sha512-utWOt/GHzuUxnLKxB6dk81RoOeoNeHgbrXiuGk4yyF5qlRz+iIVWu56E2fqGHFrXz0QNUhLB/8nKqvRH66JKGQ==}
